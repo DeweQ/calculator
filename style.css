@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: #595252;
+}
+
+#container {
+    border: 5px outset #897172;
+    padding: 15px;
+    border-radius: 5px;
+
+}
+
+.line {
+    border: 1px solid #595252;
+}
+
+#buttons {
+    display: flex;
+}
+
+#display {
+    flex: 0 0 50px;
+    font-size: 24px;
+    text-align: end;
+    border-style: double;
+    padding: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#numbers {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 200px;
+    gap: 5px
+}
+
+#operators {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.num,
+.evaluate {
+    box-sizing: border-box;
+    flex: 0 0 60px;
+    height: 60px;
+    text-align: center;
+    align-content: center;
+}
+
+.operator {
+    flex: 0 0 60px;
+    width: 60px;
+}
+
+button {
+    border: 1px solid #897172;
+    border-radius: 5px;
+    background-color: #d19fa0;
+    font-size: 24px;
+}
+
+.focused-display-section {
+    font-size: 44px;
+}
