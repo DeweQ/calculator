@@ -15,7 +15,8 @@ body {
 }
 
 .line {
-    border: 1px solid #595252;
+    border: 1px solid #595252; 
+    margin: 3px 0px;
 }
 
 #buttons {
@@ -31,6 +32,10 @@ body {
     margin-bottom: 5px;
     display: flex;
     flex-direction: column;
+}
+
+#expression,#result {
+  min-height: 25px;
 }
 
 #numbers {
@@ -65,8 +70,19 @@ button {
     border-radius: 5px;
     background-color: #d19fa0;
     font-size: 24px;
+    flex:0 0 60px;
+    height: 60px;
+    width: 60px;
 }
 
 .focused-display-section {
     font-size: 44px;
+    min-height: 44px;
+    flex:1 0 44px;
+}
+
+#controls {
+  display: flex;
+  gap: 5px;
+  padding-bottom: 5px;
 }
