@@ -35,7 +35,8 @@ body {
 }
 
 #expression,#result {
-  min-height: 25px;
+  align-content: center;
+  min-height: 32px;
 }
 
 #numbers {
@@ -76,7 +77,6 @@ button {
 }
 
 .focused-display-section {
-    font-size: 44px;
     min-height: 44px;
     flex:1 0 44px;
 }
