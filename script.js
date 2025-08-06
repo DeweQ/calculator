@@ -108,8 +108,6 @@ function evaluateExpression() {
 }
 
 function keyupEventHandler(event) {
-  // if (["0","1","2","3","4","5","6","7","8","9",".","*","/","+","-","=","Enter","Escape","Backspace"].indexOf(event.key)>=0)
-  //   console.log(event.key);
   switch (event.key) {
     case "0":
     case "1":
@@ -140,9 +138,6 @@ function keyupEventHandler(event) {
       removeDigit();
       break;
   }
-  //console.log("Key pressed: ", event.key);
-  // console.log("Key code: ", event.code);
-
 }
 //#endregion
 
