@@ -4,6 +4,10 @@ const operators = document.querySelector("#operators")
 const evaluate = document.querySelector(".evaluate");
 
 //#region Event Listeners
+document.body.addEventListener("keyup", keyupEventHandler);
+document.body.addEventListener("keyup", e => updateDisplay())
+document.querySelector("#container").addEventListener("click", e => updateDisplay());
+
 buttons.addEventListener("click", e => {
   if (e.target.classList.contains("num"))
     inputDigit(e.target.textContent);
@@ -26,8 +30,6 @@ operators.addEventListener("click", e => {
 });
 
 evaluate.addEventListener("click", evaluateExpression);
-
-document.querySelector("#container").addEventListener("click", e => updateDisplay());
 //#endregion
 
 //#region Event Handlers
@@ -46,7 +48,7 @@ function inputOperator(op) {
     appendToCurrentOperand(res);
     res = "";
   }
-  if (operator === "" ||
+  if ((operator === "" && leftOperand.value != "") ||
     (operator != "" && rightOperand.value === "")) {
     operator = op;
   }
@@ -103,6 +105,44 @@ function evaluateExpression() {
     rightOperand.value = "";
     operator = "";
   }
+}
+
+function keyupEventHandler(event) {
+  // if (["0","1","2","3","4","5","6","7","8","9",".","*","/","+","-","=","Enter","Escape","Backspace"].indexOf(event.key)>=0)
+  //   console.log(event.key);
+  switch (event.key) {
+    case "0":
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+    case "7":
+    case "8":
+    case "9":
+      inputDigit(event.key);
+      break;
+    case "+":
+    case "-":
+    case "*":
+    case "/":
+      inputOperator(event.key);
+      break;
+    case "=":
+    case "Enter":
+      evaluateExpression();
+      break;
+    case "Escape":
+      clear();
+      break;
+    case "Backspace":
+      removeDigit();
+      break;
+  }
+  //console.log("Key pressed: ", event.key);
+  // console.log("Key code: ", event.code);
+
 }
 //#endregion
 
