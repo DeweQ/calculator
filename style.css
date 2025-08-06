@@ -24,19 +24,12 @@ body {
 }
 
 #display {
-    flex: 0 0 50px;
+    min-height: 30px;
     font-size: 24px;
     text-align: end;
     border-style: double;
     padding: 5px;
     margin-bottom: 5px;
-    display: flex;
-    flex-direction: column;
-}
-
-#expression,#result {
-  align-content: center;
-  min-height: 32px;
 }
 
 #numbers {
@@ -74,11 +67,6 @@ button {
     flex:0 0 60px;
     height: 60px;
     width: 60px;
-}
-
-.focused-display-section {
-    min-height: 44px;
-    flex:1 0 44px;
 }
 
 #controls {
